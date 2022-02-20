@@ -23,7 +23,7 @@ const cityName = ref('')
 
 <template>
 <menu-icon />
-    <header v-if>
+    <header>
         <form class="search" @submit.prevent="$emit('getWeather', cityName) ,cityName=''">
             <input type="text" name="q" placeholder="Another location" v-model="cityName" >
             <button><img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/42/000000/external-magnifying-glass-interface-kiranshastry-solid-kiranshastry.png"/></button>
