@@ -22,10 +22,11 @@ const cityName = ref('')
 </script>
 
 <template>
-    <header>
+<menu-icon />
+    <header v-if="true">
         <form class="search" @submit.prevent="$emit('getWeather', cityName) ,cityName=''">
             <input type="text" name="q" placeholder="Another location" v-model="cityName" >
-            <button><magnify-icon :size="32" /></button>
+            <button><img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/42/000000/external-magnifying-glass-interface-kiranshastry-solid-kiranshastry.png"/></button>
         </form>
 
 
@@ -33,25 +34,6 @@ const cityName = ref('')
             <div class="country">
                 <h4 v-for="country in countries" @click="$emit('getWeather', country.country)">{{country.country}}</h4>
             </div>
-
-            <!-- <div class="weather-detail" v-if="show">
-                <hr>
-                <h3 class="title">Weather Deital</h3>
-                <div class="detail">
-                    <div class="data">
-                        <h4>{{detail[0].title}}</h4>
-                        <span>{{detail[0].number}}</span>
-                    </div>
-                    <div class="data">
-                        <h4>{{detail[1].title}}</h4>
-                        <span>{{detail[1].number}}</span>
-                    </div>
-                    <div class="data">
-                        <h4>{{detail[2].title}}</h4>
-                        <span>{{detail[2].number}}</span>
-                    </div>
-                </div>
-            </div> -->
             <hr>
         </div>
     </header>
@@ -102,7 +84,7 @@ const cityName = ref('')
         right: 0;
         border: none;
         outline: none;
-        padding:1.8rem 2.2rem;
+        padding:1.5rem 2.4rem;
         background: #f09115;
         cursor: pointer;
     }
