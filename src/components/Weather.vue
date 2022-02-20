@@ -4,7 +4,7 @@ import { reactive, ref } from 'vue';
 import Sidebar from './Sidebar.vue'
 
 const apiKey = 'a622b592914b4189b7f04743222002'
-const baseurl = 'http://api.weatherapi.com/v1'
+const baseurl = 'https://api.weatherapi.com/v1'
 const current_weather = '/current.json'
 
 const date = reactive(new Date());
@@ -20,11 +20,13 @@ function getWeather(country) {
   .get(`${baseurl}${current_weather}?key=${apiKey}&q=${country}&aqi=yes`)
   .then((res)=> {
     cityData.value = res
-    console.log()
+    console.log(country)
   })
 
   show.value = true
 }
+
+
 
 </script>
 
